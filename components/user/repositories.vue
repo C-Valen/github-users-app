@@ -94,6 +94,6 @@ onMounted(async () => {
 
 .prev-btn,
 .next-btn {
-  @apply mx-2 active:scale-95 transition-transform duration-200;
+  @apply mx-2;
 }
 </style>

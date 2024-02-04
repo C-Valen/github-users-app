@@ -2,7 +2,7 @@
 
 <template>
   <div class="search-view">
-    <Icon name="uil:github" size="200px" alt="logo"/>
+    <Icon name="uil:github" size="200px" alt="logo" />
     <SearchBar />
   </div>
 </template>

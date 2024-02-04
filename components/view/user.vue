@@ -9,7 +9,7 @@ const appStateStore = useAppStateStore();
   <div class="user-container">
     <!-- Top bar -->
     <div class="container-bar">
-      <Icon name="uil:github" size="48px" />
+      <button @click="appStateStore.Home" class="home-btn" aria-label="Home Button"><Icon name="uil:github" size="48px" /></button>
     </div>
     <!-- User content -->
     <div class="user-content">
