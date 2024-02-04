@@ -41,7 +41,6 @@ export const useUserDataStore = defineStore({
         this.repositories = mappedRepositories.slice(0, this.perPage);
         appStateStore.loadingRepos = false;
         this.nextRepoPage = mappedRepositories.slice(-this.perPage);
-        console.log(this.nextRepoPage);
       } catch (error) {
         console.error(error.message);
       }
