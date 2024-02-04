@@ -12,12 +12,12 @@ This repository follows a branching strategy with three main branches:
 
 ## Modules and Dependencies
 
-- **[Nuxt.js](https://nuxtjs.org/)** - A powerful Vue.js framework for building modern web applications.
+- **[Nuxt](https://nuxt.com/)** - A powerful Vue.js framework for building modern web applications.
 - **[Tailwind CSS](https://tailwindcss.com/)** - A highly customizable CSS framework for rapid UI development.
+- **[DaisyUI](https://daisyui.com/)** - A plugin for Tailwind CSS that adds a set of customizable classes and color names.
 - **[nuxt-svgo](https://github.com/cpsoinos/nuxt-svgo):** Module for optimizing SVG files in the project.
 - **[@nuxt/image](https://image.nuxtjs.org/)** Module for image optimization and handling responsive images.
 - **[@pinia/nuxt](https://pinia.esm.dev/)** - A modern and lightweight state management library for Vue.js (Nuxt.js compatible).
-- **[DaisyUI](https://daisyui.com/)** - A plugin for Tailwind CSS that adds a set of customizable classes and color names.
 - **[@nuxtjs/color-mode](https://color-mode.nuxtjs.org/)** - Dark and Light mode with auto detection for Nuxt.
 
 ## Project Structure
