@@ -43,14 +43,24 @@ onMounted(async () => {
     </div>
     <!-- Pagination Row -->
     <div v-show="userDataStore.repositories.length > 0" class="page-nav">
-      <button :class="{ invisible: userDataStore.repoPage === 1 }" :disabled="appStateStore.loadingRepos" @click="userDataStore.loadPreviousPage()" class="prev-btn" aria-label="Previous Page">
+      <button
+        :class="{ invisible: userDataStore.repoPage === 1 }"
+        :disabled="appStateStore.bufferingRepos || appStateStore.loadingRepos"
+        @click="userDataStore.loadPreviousPage()"
+        class="prev-btn"
+        aria-label="Previous Page">
         <Icon name="material-symbols:arrow-circle-left" size="48px" class="p-1 md:p-0" alt="Previous Icon" />
       </button>
-      <div  class="flex">
+      <div class="flex">
         <span v-if="appStateStore.loadingRepos" class="mx-auto"><Icon size="48px" class="p-1 md:p-0" name="svg-spinners:3-dots-fade" /></span>
         <span v-else class="mx-auto text-sm md:text-base"> Page {{ userDataStore.repoPage }} of {{ userDataStore.calculateTotalPages() }} </span>
       </div>
-      <button :class="{ invisible: userDataStore.repoPage === userDataStore.calculateTotalPages() }" :disabled="appStateStore.loadingRepos" @click="userDataStore.loadNextPage()" class="next-btn" aria-label="Next Page">
+      <button
+        :class="{ invisible: userDataStore.repoPage === userDataStore.calculateTotalPages() }"
+        :disabled="appStateStore.bufferingRepos || appStateStore.loadingRepos"
+        @click="userDataStore.loadNextPage()"
+        class="next-btn"
+        aria-label="Next Page">
         <Icon name="material-symbols:arrow-circle-right" size="48px" class="p-1 md:p-0" alt="Next Icon" />
       </button>
     </div>
@@ -84,6 +94,6 @@ onMounted(async () => {
 
 .prev-btn,
 .next-btn {
-  @apply mx-2 active:scale-95 transition-transform duration-200;
+  @apply mx-2;
 }
 </style>

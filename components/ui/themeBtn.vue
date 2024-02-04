@@ -1,5 +1,5 @@
 <template>
-    <button @click="toggleTheme" class="color-mode-button">
+    <button @click="toggleTheme" class="color-mode-button" aria-label="Theme Button">
       <Icon v-if="colorMode.preference == 'light'" name="line-md:moon-filled-alt-to-sunny-filled-loop-transition" size="48px" />
       <Icon v-else-if="colorMode.preference == 'dark'" name="line-md:sunny-filled-loop-to-moon-alt-filled-loop-transition" size="48px" />
       <Icon v-else name="svg-spinners:90-ring" size="48px" />
