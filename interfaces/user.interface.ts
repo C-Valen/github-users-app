@@ -22,6 +22,8 @@ export interface User {
   followers: number;
   publicRepos: number;
   repositories: Repository[];
+  prevRepoPage: Repository[];
+  nextRepoPage: Repository[];
   repoPage: number;
   perPage: number;
 }

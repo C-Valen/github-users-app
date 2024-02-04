@@ -7,6 +7,7 @@ interface AppState {
   currentView: 'search' | 'userData';
   loadingView: boolean;
   loadingRepos: boolean;
+  bufferingRepos: boolean;
 }
 
 export const useAppStateStore = defineStore({
@@ -15,6 +16,7 @@ export const useAppStateStore = defineStore({
     currentView: 'search',
     loadingView: false,
     loadingRepos: false,
+    bufferingRepos: false,
   }),
   actions: {
     showUserView() {
