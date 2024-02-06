@@ -9,12 +9,12 @@ export default defineNuxtConfig({
       apiBase: 'https://api.github.com/'
     }
   },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-svgo", "@nuxt/image", "@pinia/nuxt", "nuxt-icon", "@nuxtjs/color-mode"],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-svgo', '@nuxt/image', '@pinia/nuxt', 'nuxt-icon', '@nuxtjs/color-mode'],
   pinia: {
-    autoImports: ["defineStore"],
+    autoImports: ['defineStore'],
   },
   imports: {
-    dirs: ["./stores"]
+    dirs: ['./stores']
   },
   svgo: {
     autoImportPath: false
@@ -22,9 +22,9 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
     preference: 'light',
-    fallback: "light",
-    dataValue: "theme",
+    fallback: 'light',
+    dataValue: 'theme',
   },  
-  css: ["@/assets/css/main.css"],
+  css: ['@/assets/css/main.css'],
   optimizeCSS: true,
 })

@@ -1,11 +1,18 @@
 <!-- components/ui/errorPopup.vue -->
 
 <script setup>
-const props = defineProps(["msg"]);
+const props = defineProps({
+  msg: {
+    type: String,
+    required: true
+  },
+})
 </script>
 
 <template>
-    <div class="error-msg">{{ props.msg }}</div>
+  <div class="error-msg">
+    {{ props.msg }}
+  </div>
 </template>
 
 <style scoped>
@@ -18,6 +25,7 @@ const props = defineProps(["msg"]);
   from {
     transform: translateY(0rem);
   }
+
   to {
     transform: translateY(-0.25rem);
   }

@@ -7,11 +7,17 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/tailwindcss": "^6.11.2",
+    "eslint": "^8.56.0",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
     "daisyui": "^4.6.1",
     "nuxt": "^3.10.0",
     "nuxt-icon": "^0.6.8",

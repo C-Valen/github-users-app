@@ -4,31 +4,31 @@
 */
 
 interface AppState {
-  currentView: "search" | "userData";
+  currentView: 'search' | 'userData';
   loadingView: boolean;
   loadingRepos: boolean;
   bufferingRepos: boolean;
 }
 
 export const useAppStateStore = defineStore({
-  id: "appState",
+  id: 'appState',
   state: (): AppState => ({
-    currentView: "search",
+    currentView: 'search',
     loadingView: false,
     loadingRepos: false,
     bufferingRepos: false,
   }),
   actions: {
     showUserView() {
-      this.currentView = "userData";
+      this.currentView = 'userData'
     },
     showSearchBar() {
-      this.currentView = "search";
+      this.currentView = 'search'
     },
     Home() {
-      const userDataStore = useUserDataStore();
-      userDataStore.resetState();
-      this.showSearchBar();
+      const userDataStore = useUserDataStore()
+      userDataStore.resetState()
+      this.showSearchBar()
     },
   },
-});
+})

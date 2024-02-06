@@ -2,11 +2,11 @@
 
 <script setup>
 // Stores
-const userDataStore = useUserDataStore();
+const userDataStore = useUserDataStore()
 
 // Methods
-const formatLogin = (login) => `@${login}`;
-const formatFollowers = (followers) => `${followers} followers`;
+const formatLogin = (login) => `@${login}`
+const formatFollowers = (followers) => `${followers} followers`
 </script>
 
 <template>
@@ -18,9 +18,15 @@ const formatFollowers = (followers) => `${followers} followers`;
       </div>
       <!-- Profile details -->
       <div class="profile-details">
-        <div class="text-xl md:text-2xl">{{ formatLogin(userDataStore.login) }}</div>
-        <div class="text-lg md:text-xl font-bold">{{ userDataStore.name }}</div>
-        <div class="text-sm md:text-base">{{ formatFollowers(userDataStore.followers) }}</div>
+        <div class="text-xl md:text-2xl">
+          {{ formatLogin(userDataStore.login) }}
+        </div>
+        <div class="text-lg md:text-xl font-bold">
+          {{ userDataStore.name }}
+        </div>
+        <div class="text-sm md:text-base">
+          {{ formatFollowers(userDataStore.followers) }}
+        </div>
       </div>
     </div>
     <!-- Profile bio -->

@@ -4,16 +4,16 @@
 */
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig(event);
-  const userId = getRouterParam(event, "userId");
+  const config = useRuntimeConfig(event)
+  const userId = getRouterParam(event, 'userId')
 
   // Github get userId api call
-  const userData = await $fetch("https://api.github.com/users/" + userId, {
+  const userData = await $fetch('https://api.github.com/users/' + userId, {
     headers: {
       Authorization: `Bearer ${config.githubToken}`,
       'User-Agent': 'github-users-app',
-      "X-GitHub-Api-Version": "2022-11-28",
+      'X-GitHub-Api-Version': '2022-11-28',
     },
-  });
-  return userData;
-});
+  })
+  return userData
+})

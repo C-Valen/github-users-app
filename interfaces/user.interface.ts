@@ -12,7 +12,7 @@
  * perPage - Number of repositories per page
  */
 
-import type { Repository } from "~/interfaces/repository.interface";
+import type { Repository } from '~/interfaces/repository.interface'
 
 export interface User {
   login: string;

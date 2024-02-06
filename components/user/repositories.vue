@@ -4,26 +4,30 @@
 // Refs
 
 // Stores
-const userDataStore = useUserDataStore();
-const appStateStore = useAppStateStore();
+const userDataStore = useUserDataStore()
+const appStateStore = useAppStateStore()
 
 // Methods
 
 // Lifecycle Hook
 onMounted(async () => {
-  await userDataStore.loadRepositories();
-});
+  await userDataStore.loadRepositories()
+})
 </script>
 
 <template>
   <div class="mt-4">
     <!-- Loading Repositories -->
-    <div class="empty-container" v-if="appStateStore.loadingRepos"><Icon size="64px" class="m-auto" name="svg-spinners:90-ring-with-bg" /></div>
+    <div v-if="appStateStore.loadingRepos" class="empty-container">
+      <Icon size="64px" class="m-auto" name="svg-spinners:90-ring-with-bg" />
+    </div>
     <!-- No repositories -->
-    <div class="empty-container" v-else-if="userDataStore.repositories.length === 0">No repositories available.</div>
+    <div v-else-if="userDataStore.repositories.length === 0" class="empty-container">
+      No repositories available.
+    </div>
     <div v-else class="min-h-[260px]">
       <!-- Repositories page -->
-      <div v-for="(repo, index) in userDataStore.repositories" :key="repo.id">
+      <div v-for="repo in userDataStore.repositories" :key="repo.id">
         <!-- Repository row -->
         <div class="repo-row">
           <div class="repo-name">
@@ -46,9 +50,10 @@ onMounted(async () => {
       <button
         :class="{ invisible: userDataStore.repoPage === 1 }"
         :disabled="appStateStore.bufferingRepos || appStateStore.loadingRepos"
-        @click="userDataStore.loadPreviousPage()"
         class="prev-btn"
-        aria-label="Previous Page">
+        aria-label="Previous Page"
+        @click="userDataStore.loadPreviousPage()"
+      >
         <Icon name="material-symbols:arrow-circle-left" size="48px" class="p-1 md:p-0" alt="Previous Icon" />
       </button>
       <div class="flex">
@@ -58,9 +63,10 @@ onMounted(async () => {
       <button
         :class="{ invisible: userDataStore.repoPage === userDataStore.calculateTotalPages() }"
         :disabled="appStateStore.bufferingRepos || appStateStore.loadingRepos"
-        @click="userDataStore.loadNextPage()"
         class="next-btn"
-        aria-label="Next Page">
+        aria-label="Next Page"
+        @click="userDataStore.loadNextPage()"
+      >
         <Icon name="material-symbols:arrow-circle-right" size="48px" class="p-1 md:p-0" alt="Next Icon" />
       </button>
     </div>

@@ -1,45 +1,47 @@
 <!-- components/searchBar.vue -->
 
 <script setup>
-import { useAppStateStore } from "~/stores/appState";
+import { useAppStateStore } from '~/stores/appState'
 
 // Refs
-const username = ref("");
-const error = ref("");
+const username = ref('')
+const error = ref('')
 
 // Stores
-const appStateStore = useAppStateStore();
-const userDataStore = useUserDataStore();
+const appStateStore = useAppStateStore()
+const userDataStore = useUserDataStore()
 
 // Methods
 const handleSearch = async () => {
   await searchUser(username, {
     onSearchComplete: () => {
       // Change the view after the search is complete
-      if (appStateStore.currentView === "userData") {
-        userDataStore.repoPage = 1;
-        userDataStore.loadRepositories();
-        error.value = "";
+      if (appStateStore.currentView === 'userData') {
+        userDataStore.repoPage = 1
+        userDataStore.loadRepositories()
+        error.value = ''
       } else {
-        appStateStore.showUserView();
+        appStateStore.showUserView()
       }
     },
     // Or pop up an error
     onError: (e) => {
-      error.value = e;
+      error.value = e
     },
-  });
-};
+  })
+}
 </script>
 
 <template>
   <div class="search-bar">
-    <input v-model="username" placeholder="@UserName" @keyup.enter="handleSearch" :class="{ 'error-input': error }" />
+    <input v-model="username" placeholder="@UserName" :class="{ 'error-input': error }" @keyup.enter="handleSearch">
     <!-- Error pop up -->
     <UiErrorPopup v-if="error" :msg="error.message" class="error-block" />
-    <div v-else class="min-h-[44px]"></div>
+    <div v-else class="min-h-[44px]" />
     <!-- Search button (hidden lg screens) -->
-    <UiBtn @click="handleSearch" class="search-btn" aria-label="Search Button"> Search </UiBtn>
+    <UiBtn class="search-btn" aria-label="Search Button" @click="handleSearch">
+      Search
+    </UiBtn>
   </div>
 </template>
 

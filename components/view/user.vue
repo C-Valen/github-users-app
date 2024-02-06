@@ -2,14 +2,16 @@
 
 <script setup>
 // Stores
-const appStateStore = useAppStateStore();
+const appStateStore = useAppStateStore()
 </script>
 
 <template>
   <div class="user-container">
     <!-- Top bar -->
     <div class="container-bar">
-      <button @click="appStateStore.Home" class="home-btn" aria-label="Home Button"><Icon name="uil:github" size="48px" /></button>
+      <button class="home-btn" aria-label="Home Button" @click="appStateStore.Home">
+        <Icon name="uil:github" size="48px" />
+      </button>
     </div>
     <!-- User content -->
     <div class="user-content">
