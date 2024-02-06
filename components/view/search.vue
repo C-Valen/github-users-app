@@ -7,16 +7,16 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .search-view {
   @apply flex flex-col justify-center w-screen;
 }
 
-.search-view > * {
+.search-view>* {
   @apply mx-auto;
 }
 
-.search-view > svg {
+.search-view>svg {
   @apply max-w-80 md:max-w-96 p-10 text-accent;
 }
 </style>

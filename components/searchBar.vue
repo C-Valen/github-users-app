@@ -1,6 +1,6 @@
 <!-- components/searchBar.vue -->
 
-<script setup>
+<script setup lang="ts">
 import { useAppStateStore } from '~/stores/appState'
 
 // Refs
@@ -26,7 +26,7 @@ const handleSearch = async () => {
     },
     // Or pop up an error
     onError: (e) => {
-      error.value = e
+      error.value = e.message
     },
   })
 }
@@ -36,7 +36,7 @@ const handleSearch = async () => {
   <div class="search-bar">
     <input v-model="username" placeholder="@UserName" :class="{ 'error-input': error }" @keyup.enter="handleSearch">
     <!-- Error pop up -->
-    <UiErrorPopup v-if="error" :msg="error.message" class="error-block" />
+    <UiErrorPopup v-if="error" :msg="error" class="error-block" />
     <div v-else class="min-h-[44px]" />
     <!-- Search button (hidden lg screens) -->
     <UiBtn class="search-btn" aria-label="Search Button" @click="handleSearch">
@@ -45,7 +45,7 @@ const handleSearch = async () => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .search-bar {
   @apply flex flex-col w-3/4 lg:w-2/4 relative;
 }

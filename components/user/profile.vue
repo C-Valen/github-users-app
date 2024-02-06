@@ -1,12 +1,12 @@
 <!-- components/user/content.vue -->
 
-<script setup>
+<script setup lang="ts">
 // Stores
 const userDataStore = useUserDataStore()
 
 // Methods
-const formatLogin = (login) => `@${login}`
-const formatFollowers = (followers) => `${followers} followers`
+const formatLogin = (login: string) => `@${login}`
+const formatFollowers = (followers: number) => `${followers} followers`
 </script>
 
 <template>
@@ -36,7 +36,7 @@ const formatFollowers = (followers) => `${followers} followers`
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .profile-container {
   @apply flex flex-col min-w-full justify-center px-4 sm:px-10 md:px-20 py-4;
 }
@@ -49,7 +49,7 @@ const formatFollowers = (followers) => `${followers} followers`
   @apply flex mr-4 min-w-fit;
 }
 
-.avatar > img {
+.avatar>img {
   @apply h-24 w-24 rounded-sm;
 }
 

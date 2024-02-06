@@ -6,7 +6,7 @@
   </button>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .btn {
   @apply py-2 px-4 bg-accent text-base-100 shadow-lg outline-none transition-all duration-200;
 }

@@ -6,7 +6,7 @@
   </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const colorMode = useColorMode()
 
 const toggleTheme = () => {
@@ -15,7 +15,7 @@ const toggleTheme = () => {
 }
 </script>
 
-<style scoped>
+<style scoped lang="css">
 .color-mode-button {
   @apply h-[48px] w-[48px];
 }

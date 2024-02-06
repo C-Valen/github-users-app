@@ -1,13 +1,11 @@
 <!-- components/user/repositories.vue -->
 
-<script setup>
+<script setup lang="ts">
 // Refs
 
 // Stores
 const userDataStore = useUserDataStore()
 const appStateStore = useAppStateStore()
-
-// Methods
 
 // Lifecycle Hook
 onMounted(async () => {
@@ -27,7 +25,7 @@ onMounted(async () => {
     </div>
     <div v-else class="min-h-[260px]">
       <!-- Repositories page -->
-      <div v-for="repo in userDataStore.repositories" :key="repo.id">
+      <div v-for="(repo,index) in userDataStore.repositories" :key="index">
         <!-- Repository row -->
         <div class="repo-row">
           <div class="repo-name">
@@ -73,7 +71,7 @@ onMounted(async () => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .empty-container {
   @apply flex p-4 min-h-[260px];
 }

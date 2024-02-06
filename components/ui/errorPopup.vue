@@ -1,6 +1,6 @@
 <!-- components/ui/errorPopup.vue -->
 
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
   msg: {
     type: String,
@@ -15,7 +15,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .error-msg {
   @apply text-center bg-red-200 text-red-600 text-sm py-3 px-5 rounded-b-lg -translate-y-1;
   @apply animate-[slideDown_0.5s_ease-in-out];

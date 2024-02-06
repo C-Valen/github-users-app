@@ -1,6 +1,6 @@
 <!-- components/view/user.vue -->
 
-<script setup>
+<script setup lang="ts">
 // Stores
 const appStateStore = useAppStateStore()
 </script>
@@ -23,7 +23,7 @@ const appStateStore = useAppStateStore()
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
 .user-container {
   @apply flex flex-col text-accent w-full md:shadow-xl md:m-auto min-h-screen;
 }
@@ -31,6 +31,7 @@ const appStateStore = useAppStateStore()
 .container-bar {
   @apply flex justify-between items-center p-3 pr-4 mb-4;
 }
+
 .user-content {
   @apply lg:w-3/5 lg:mx-auto;
 }

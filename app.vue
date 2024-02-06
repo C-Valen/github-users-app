@@ -1,6 +1,6 @@
 <!-- app.vue -->
 
-<script setup>
+<script setup lang="ts">
 const appStateStore = useAppStateStore()
 </script>
 
