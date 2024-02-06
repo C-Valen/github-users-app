@@ -63,7 +63,7 @@ export async function searchUser(username: Ref<string>, options?: SearchUserOpti
   } catch (error) {
     // Trigger the onError callback if provided
     if (options?.onError) {
-      options.onError(error)
+      options.onError((error as Error))
     }
   }
 }

@@ -6,8 +6,7 @@
 import type { Repository } from '~/interfaces/repository.interface'
 import type { User } from '~/interfaces/user.interface'
 
-export const useUserDataStore = defineStore({
-  id: 'userData',
+export const useUserDataStore = defineStore('userData', {
   state: (): User => ({
     login: '',
     name: '',
@@ -22,7 +21,7 @@ export const useUserDataStore = defineStore({
     perPage: 5,
   }),
   actions: {
-    setUserData(userData: Object) {
+    setUserData(userData: any) {
       // Mapping only required user data properties
       this.login = userData.login
       this.name = userData.name
@@ -42,7 +41,7 @@ export const useUserDataStore = defineStore({
         appStateStore.loadingRepos = false
         this.nextRepoPage = mappedRepositories.slice(-this.perPage)
       } catch (error) {
-        console.error(error.message)
+        console.error((error as Error).message)
       }
     },
     async loadNextRepositories() {
@@ -53,7 +52,7 @@ export const useUserDataStore = defineStore({
         const newRepositories = await searchRepos(this.login, this.repoPage + 1, this.perPage)
         this.nextRepoPage = this.mapRepositories(newRepositories)
       } catch (error) {
-        console.error(error.message)
+        console.error((error as Error).message)
       }
     },
     async loadPrevRepositories() {
@@ -66,10 +65,10 @@ export const useUserDataStore = defineStore({
           this.prevRepoPage = this.mapRepositories(newRepositories)
         }
       } catch (error) {
-        console.error(error.message)
+        console.error((error as Error).message)
       }
     },
-    mapRepositories(repositories: Repository[]): Repository[] {
+    mapRepositories(repositories: any[]): Repository[] {
       // Maps input into required repository structure
       return repositories.map(({ name, forks, stargazers_count }) => ({
         name,

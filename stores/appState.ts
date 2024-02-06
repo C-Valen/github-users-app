@@ -10,8 +10,7 @@ interface AppState {
   bufferingRepos: boolean;
 }
 
-export const useAppStateStore = defineStore({
-  id: 'appState',
+export const useAppStateStore = defineStore('appState', {
   state: (): AppState => ({
     currentView: 'search',
     loadingView: false,
